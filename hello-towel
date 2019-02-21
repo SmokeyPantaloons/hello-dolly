@@ -1,21 +1,24 @@
 <?php
 /**
- * @package hello_towel
+ * @package Hello_Towel
  * @version 1.6
  */
 /*
-Plugin Name: Hello-Towel
+Plugin Name: Hello Towel
 Plugin URI: https://wordpress.org/plugins/hello-towel/
-Description: Displays a line from Douglas Adams' book "The Hitchhiker's Guide to the Galaxy"
-Author: Craig Dupuis, forked from Hello-Dolly
+Description: Displays a line from Douglas Adams' books "The Hitchhiker's Guide to the Galaxy",
+"The Long Dark Tea-Time of the Soul", and "The Salmon of Doubt", occasionally reminding us of 
+the supreme value a towel can have.  Credit to Matt Mullenweg for original 'Hello Dolly' plugin. 
+(Forked on Github @)
+Author: Craig Dupuis
 Version: 1
 Author URI: https://www.cdupuis.com
-Text Domain: Hello-towel
+Text Domain: hello-towel
 */
 
 function hello_towel_get_line() {
 	/** These are the lines from Douglas Adams */
-$lines = "
+$lines = "A towel is about the most massively useful thing an interstellar hitchhiker can have.
 Don't Panic.
 Time is an illusion. Lunchtime doubly so.
 Would it save you a lot of time if I just gave up and went mad now?
@@ -55,15 +58,14 @@ function towel_css() {
 	<style type='text/css'>
 	#towel {
 		float: $x;
+		font-family: sans-serif;
 		padding-$x: 15px;
 		padding-top: 5px;
 		margin: 0;
-		font-size: 11px;
+		font-size: 12px;
 	}
 	</style>
 	";
 }
 
 add_action( 'admin_head', 'towel_css' );
-
-
